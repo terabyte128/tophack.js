@@ -11,7 +11,6 @@ var obs = new MutationObserver(function(mutations, observer) {
     // look through all added nodes of this mutation
     for(var j = 0; j < mutations[i].addedNodes.length; j++) {
       var change = mutations[i].addedNodes[j];
-      console.log(change);
 
       // for some reason we have to wait a bit for questions to load
       setTimeout(function() {
@@ -31,7 +30,7 @@ var obs = new MutationObserver(function(mutations, observer) {
 // this doesn't immediately work, so persist until it does
 function startObserve() {
   try {
-    // have the observer observe foo for changes in children
+    // have the observer observe the panel for children to appear
     obs.observe($(".panels").get(2), {
       childList: true
     });
