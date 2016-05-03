@@ -8,7 +8,8 @@ A small set of GreaseMonkey hacks to make TopHat better. Currently includes:
 ### Installation
 1. Create a new userscript in GreaseMonkey (or JS Blocker, if you're using Safari) with the following contents:
 
-    ```// ==UserScript==
+    ```
+    // ==UserScript==
     // @name TopHack
     // @namespace sXyefScZL3qFqDn-5.0.6-150630
     // @version 0.1
@@ -19,3 +20,4 @@ A small set of GreaseMonkey hacks to make TopHat better. Currently includes:
 
 (the download URL is for updates, if you don't want auto-updates you can omit it)
 2. Add the [latest version of the script](https://raw.githubusercontent.com/terabyte128/tophack.js/master/tophack.js) underneath GreaseMonkey's script matter.
+3. Reload TopHat, and check the console for errors if you have them.
