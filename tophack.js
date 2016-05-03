@@ -2,9 +2,11 @@ Notification.requestPermission();
 
 var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
 
+console.log("### TopHack v0.1 ###");
+
 setTimeout(function() {
 
-  console.log("### TopHack v0.1 ###");
+  console.log("### TopHack loading complete. ###");
 
   // define a new observer
   var obs = new MutationObserver(function(mutations, observer) {
