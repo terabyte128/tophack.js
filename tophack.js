@@ -26,6 +26,12 @@ var obs = new MutationObserver(function(mutations, observer) {
   }
 });
 
+var slideChangeObserver = new MutationObserver(function(mutations, observer) {
+  var mut = mutations[0];
+  if(mut.attributeName === "class") {
+    var n = new Notification('New Top Hat Slide');
+  }
+});
 
 // this doesn't immediately work, so persist until it does
 function startObserve() {
@@ -34,12 +40,28 @@ function startObserve() {
     obs.observe($(".panels").get(2), {
       childList: true
     });
-    console.log("#### TopHack loading complete. ####")
+    console.log("#### TopHack question observer loaded. ####")
   } catch(e) {
-    console.log("#### TopHack observer hook failed, trying again in 2 seconds. ####");
+    console.log("#### TopHack question observer hook failed, trying again in 2 seconds. ####");
     console.log(e);
     setTimeout(startObserve, 2000);
   }
 }
 
+function startSlideObserve() {
+  try {
+    slideChangeObserver.observe($(".crocodoc-doc.crocodoc-viewer.crocodoc-layout-presentation.image-viewer").get(0), {
+      childList: true,
+      attributes: true,
+      subtree: true
+    });
+    console.log("#### TopHack slide observer loaded. ####")
+  } catch(e) {
+    console.log("#### TopHack slide observer hook failed, trying again in 2 seconds. ####");
+    console.log(e);
+    setTimeout(startSlideObserve, 2000);
+  }
+}
+
 startObserve();
+startSlideObserve();

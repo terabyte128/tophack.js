@@ -4,6 +4,9 @@
 
 A small set of GreaseMonkey hacks to make TopHat better. Currently includes:
 - Notifications for new questions
+- Notifications for new slides
+
+**Not guaranteed to work on anything besides Mac OS X, uses Safari's Notification API**
 
 ### Installation
 1. Create a new userscript in GreaseMonkey (or JS Blocker, if you're using Safari) with the following contents:
